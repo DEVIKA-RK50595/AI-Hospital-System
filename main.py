@@ -18,8 +18,9 @@ app.add_middleware(
 # --- DATABASE MANAGEMENT SETUP ---
 import os
 
-IS_RENDER = os.environ.get("RENDER")
-DB_FILE = "/data/hospital_triage.db" if IS_RENDER else "hospital_triage.db"
+# --- DATABASE MANAGEMENT SETUP ---
+# On Render Free Tier, we will save it directly in the project directory
+DB_FILE = "hospital_triage.db"
 
 def init_db():
     """Creates the database and patient triage table if it doesn't exist."""
